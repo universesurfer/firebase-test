@@ -16,6 +16,7 @@ class ViewController: UIViewController {
 
     //Initialize our database reference
     var ref: DatabaseReference!
+    
 
 
   
@@ -110,6 +111,26 @@ class ViewController: UIViewController {
         let loggedInVC: ProfileController = storyboard.instantiateViewController(withIdentifier: "ProfileController") as! ProfileController
         self.present(loggedInVC, animated: true, completion: nil)
     }
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 
 }
 
