@@ -15,7 +15,6 @@
 		2145A9A71F4B888C002DFFBA /* UserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145A9A61F4B888C002DFFBA /* UserModel.swift */; };
 		2145A9AA1F4B8975002DFFBA /* DatabaseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2145A9A91F4B8975002DFFBA /* DatabaseService.swift */; };
 		21467C181F4CCB66006B3B51 /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21467C171F4CCB66006B3B51 /* ProfileController.swift */; };
-		21488AD41F59C3BC0021CCAD /* CustomCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21488AD31F59C3BC0021CCAD /* CustomCell.swift */; };
 		21488AD71F5A398F0021CCAD /* settings.png in Resources */ = {isa = PBXBuildFile; fileRef = 21488AD61F5A398F0021CCAD /* settings.png */; };
 		2150079B1F4F6CB10059A0AC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21422A521F478FD800E980AD /* Info.plist */; };
 		2150079C1F4F6DDE0059A0AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21422A4A1F478FD800E980AD /* Main.storyboard */; };
@@ -39,7 +38,6 @@
 		2145A9A61F4B888C002DFFBA /* UserModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserModel.swift; sourceTree = "<group>"; };
 		2145A9A91F4B8975002DFFBA /* DatabaseService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatabaseService.swift; sourceTree = "<group>"; };
 		21467C171F4CCB66006B3B51 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
-		21488AD31F59C3BC0021CCAD /* CustomCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomCell.swift; sourceTree = "<group>"; };
 		21488AD61F5A398F0021CCAD /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = ../../settings.png; sourceTree = "<group>"; };
 		215B86201F50BF9100D885D6 /* ChallengeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeController.swift; sourceTree = "<group>"; };
 		21EB25B71F5495BA004DB3CF /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
@@ -124,7 +122,6 @@
 				21422A481F478FD800E980AD /* ViewController.swift */,
 				21467C171F4CCB66006B3B51 /* ProfileController.swift */,
 				215B86201F50BF9100D885D6 /* ChallengeController.swift */,
-				21488AD31F59C3BC0021CCAD /* CustomCell.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -274,7 +271,6 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-test-login/Pods-test-login-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/JTAppleCalendar/JTAppleCalendar.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -282,7 +278,6 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JTAppleCalendar.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -303,7 +298,6 @@
 				21422A491F478FD800E980AD /* ViewController.swift in Sources */,
 				2145A9A71F4B888C002DFFBA /* UserModel.swift in Sources */,
 				2145A9AA1F4B8975002DFFBA /* DatabaseService.swift in Sources */,
-				21488AD41F59C3BC0021CCAD /* CustomCell.swift in Sources */,
 				21422A471F478FD800E980AD /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

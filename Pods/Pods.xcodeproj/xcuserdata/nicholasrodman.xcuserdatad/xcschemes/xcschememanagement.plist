@@ -14,11 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>JTAppleCalendar.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-test-login.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,17 +42,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>731D8CFE6A60AC78FCF39A55ED6DCE52</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>85BFCBF14E8B26B9A3CFEBADA5901E10</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BFED2E29E95E065400F8846E0231A970</key>
+		<key>44E03DD4B3724FE209B911A02BD3DBC4</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -7,103 +7,73 @@
 //
 
 import Foundation
+import UIKit
 import Firebase
 import FirebaseDatabase
 import Contacts
 import ContactsUI
 import Messages
 import MessageUI
-import JTAppleCalendar
 
 
-class ChallengeController: UIViewController {
+class ChallengeController: UIViewController, CNContactPickerDelegate {
     
-    //DATE FORMATTER
-    let formatter = DateFormatter()
-    
-    @IBOutlet weak var calendarView: JTAppleCalendarView!
-    @IBOutlet weak var year: UILabel!
-    @IBOutlet weak var month: UILabel!
-    
-    //CALENDAR COLORS
-    let outsideMonthColor = UIColor(colorWithHexValue: 0x584a66)
-    let monthColor = UIColor.white
-    let selectedMonthColor = UIColor.init(colorWithHexValue: 0x3a294b)
-    let currentDateSelectedViewColor = UIColor.init(colorWithHexValue: 0x4e3f5d)
-    
-    //FUNCTION THAT HANDLES SELECTED CELL COLOR
-    func handleCellSelected(view: JTAppleCell?, cellState: CellState) {
-        guard let validCell = view as? CustomCell else { return }
-        
-        //Removes randomly selected cells
-        if cellState.isSelected {
-            validCell.selectedView.isHidden = false
-        } else {
-            validCell.selectedView.isHidden = true
-        }
-        
-    }
-    
-    //HANDLE CELL TEXT COLOR
-    func handleCellTextColor(view: JTAppleCell?, cellState: CellState) {
-        guard let validCell = view as? CustomCell else {return }
-        
-        if cellState.isSelected {
-            validCell.dateLabel.textColor = selectedMonthColor
-        } else {
-            if cellState.dateBelongsTo == .thisMonth {
-                validCell.dateLabel.textColor = monthColor
-            } else {
-                validCell.dateLabel.textColor = outsideMonthColor
-            }
-        }
-    }
     
     //FIREBASE INITIALIZER
     var ref: DatabaseReference!
     
+    //INITIALIZE DATE
+    let today = NSDate()
+    let dateComponents = NSDateComponents()
+    
+    //Date Formatter
+    let formatter = DateFormatter()
+    
+
+    
+//    let components = calendar.components(.Day, fromDate: date)
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
-        //Allows for date range selection in calendar
-        calendarView.allowsMultipleSelection  = true
-        calendarView.rangeSelectionWillBeUsed = true
-        
         ref = Database.database().reference()
-    
-        setupCalendarView()
+        
     }
 
-    func setupCalendarView(){
-        //Setup calendar spacing
-        calendarView.minimumLineSpacing = 0
-        calendarView.minimumInteritemSpacing = 0
-        
-        //Setup labels
-        calendarView.visibleDates{ (visibleDates) in
+    
+    //DATE SETTING
+    @IBOutlet weak var currentDateLabel: UILabel!
+    
+    @IBAction func getCurrentDatePressed(_ sender: Any) {
+        currentDateLabel.text = String(describing: today)
+    }
+    
+    
+    @IBOutlet weak var daysEnteredInput: UITextField!
+    
+
+
+    
+    
+    
+    @IBAction func updateDatePressed(_ sender: Any) {
+        if let userEnteredDays = Int(daysEnteredInput.text!) {
+            let updatedDate = Calendar.current.date(byAdding: .day, value: userEnteredDays, to: today as Date)
             
-            self.setupViewsOfCalendar(from: visibleDates)
+            currentDateLabel.text = String(describing: updatedDate)
             
+        } else {
+            print("Error, no days entered")
         }
         
+
     }
     
     
-    //SETUP VIEWS FROM CALENDAR - MAKES THE VIEWDIDLOAD LOAD VISIBLEDATES 
     
-    func setupViewsOfCalendar(from visibleDates: DateSegmentInfo) {
-        
-        let date = visibleDates.monthDates.first!.date
-        
-        //Formats the 'year' and 'month' labels on top of our calendar
-        formatter.dateFormat = "yyyy"
-        year.text = formatter.string(from: date)
-        
-        formatter.dateFormat = "MMMM"
-        year.text = formatter.string(from: date)
-        
-    }
+    
+    
     
     @IBOutlet weak var showContactLabel: UILabel!
     
@@ -137,7 +107,7 @@ class ChallengeController: UIViewController {
     func openContacts() {
         
         let contactPicker = CNContactPickerViewController.init()
-        contactPicker.delegate = self as? CNContactPickerDelegate
+        contactPicker.delegate = self
         self.present(contactPicker, animated: true, completion: nil)
         
     }
@@ -199,78 +169,6 @@ class ChallengeController: UIViewController {
     
  
 
-    
-    
-}
 
-extension ChallengeController: JTAppleCalendarViewDataSource {
-    
-    
-    
-    func configureCalendar(_ calendar: JTAppleCalendarView) -> ConfigurationParameters{
-        
-//        let jtDelegate = JTAppleCalendarViewDelegate.self
-//        let jtDataSource = JTAppleCalendarViewDataSource.self
-        
-        formatter.dateFormat = "yyyy MM dd"
-        
-        
-        formatter.timeZone = Calendar.current.timeZone
-        formatter.locale = Calendar.current.locale
-        
-        let startDate = formatter.date(from: "2017 01 01")! //DO NOT FORCE UNWRAP IN ACTUAL APP
-        let endDate = formatter.date(from: "2017 12 31")!
-        
-        
-        let parameters = ConfigurationParameters(startDate: startDate, endDate: endDate)
-        return parameters
-    }
-    
-}
 
-extension ChallengeController: JTAppleCalendarViewDelegate {
-    
-    //SHOW THE CELL
-    func calendar(_ calendar: JTAppleCalendarView, cellForItemAt date: Date, cellState: CellState, indexPath: IndexPath) -> JTAppleCell {
-        
-        let cell = calendar.dequeueReusableJTAppleCell(withReuseIdentifier: "CustomCell", for: indexPath) as! CustomCell
-        
-        cell.dateLabel.text = cellState.text
-        
-        
-        handleCellSelected(view: cell, cellState: cellState)
-        handleCellTextColor(view: cell, cellState: cellState)
-        
-        return cell
-    }
-
-    func calendar(_ calendar: JTAppleCalendarView, didSelectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        
-        handleCellSelected(view: cell, cellState: cellState)
-        handleCellTextColor(view: cell, cellState: cellState)
-    }
-    
-    func calendar(_ calendar: JTAppleCalendarView, didDeselectDate date: Date, cell: JTAppleCell?, cellState: CellState) {
-        
-        handleCellSelected(view: cell, cellState: cellState)
-        handleCellTextColor(view: cell, cellState: cellState)
-    }
-    
-    //Setup calendar views from visibleDates
-    func calendar(_ calendar: JTAppleCalendarView, didScrollToDateSegmentWith visibleDates: DateSegmentInfo) {
-        
-        setupViewsOfCalendar(from: visibleDates)
-    }
-    
-}
-
-    extension UIColor {
-    convenience init (colorWithHexValue value: Int, alpha: CGFloat = 1.0) {
-        self.init(
-            red: CGFloat((value & 0xFF0000) >> 16) / 255.0,
-            green: CGFloat((value & 0x00FF00) >> 8) / 255.0,
-            blue: CGFloat(value & 0x0000FF) / 255.0,
-            alpha: alpha
-        )
-    }
 }
