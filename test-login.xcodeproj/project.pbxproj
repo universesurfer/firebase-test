@@ -19,6 +19,7 @@
 		2150079B1F4F6CB10059A0AC /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 21422A521F478FD800E980AD /* Info.plist */; };
 		2150079C1F4F6DDE0059A0AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 21422A4A1F478FD800E980AD /* Main.storyboard */; };
 		215B86211F50BF9100D885D6 /* ChallengeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215B86201F50BF9100D885D6 /* ChallengeController.swift */; };
+		21E65B3B1F61C94C00F23402 /* ChallengeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E65B3A1F61C94C00F23402 /* ChallengeModel.swift */; };
 		21EB25B81F5495BA004DB3CF /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21EB25B71F5495BA004DB3CF /* Contacts.framework */; };
 		21EB25BA1F5495BF004DB3CF /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21EB25B91F5495BF004DB3CF /* ContactsUI.framework */; };
 		21EB25BD1F550EE9004DB3CF /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21EB25BB1F550EE9004DB3CF /* Messages.framework */; };
@@ -40,6 +41,7 @@
 		21467C171F4CCB66006B3B51 /* ProfileController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
 		21488AD61F5A398F0021CCAD /* settings.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = settings.png; path = ../../settings.png; sourceTree = "<group>"; };
 		215B86201F50BF9100D885D6 /* ChallengeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeController.swift; sourceTree = "<group>"; };
+		21E65B3A1F61C94C00F23402 /* ChallengeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeModel.swift; sourceTree = "<group>"; };
 		21EB25B71F5495BA004DB3CF /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		21EB25B91F5495BF004DB3CF /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
 		21EB25BB1F550EE9004DB3CF /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				2145A9A61F4B888C002DFFBA /* UserModel.swift */,
+				21E65B3A1F61C94C00F23402 /* ChallengeModel.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -190,6 +193,7 @@
 				TargetAttributes = {
 					21422A421F478FD800E980AD = {
 						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = LE64LZFX2P;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -294,6 +298,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				21467C181F4CCB66006B3B51 /* ProfileController.swift in Sources */,
+				21E65B3B1F61C94C00F23402 /* ChallengeModel.swift in Sources */,
 				215B86211F50BF9100D885D6 /* ChallengeController.swift in Sources */,
 				21422A491F478FD800E980AD /* ViewController.swift in Sources */,
 				2145A9A71F4B888C002DFFBA /* UserModel.swift in Sources */,
@@ -422,10 +427,14 @@
 			baseConfigurationReference = 3FC97A7428D68B9103B08577 /* Pods-test-login.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = LE64LZFX2P;
 				INFOPLIST_FILE = "test-login/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nick.test-login";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.company.test-login";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -435,10 +444,14 @@
 			baseConfigurationReference = 9FE2D1C87B181688643D003E /* Pods-test-login.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = LE64LZFX2P;
 				INFOPLIST_FILE = "test-login/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.nick.test-login";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.company.test-login";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
