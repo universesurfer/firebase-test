@@ -203,7 +203,7 @@ class ChallengeController: UIViewController, CNContactPickerDelegate {
     
     var daysOfTheWeekArray: Array<String> = []
     
-//    var filteredDayOfTheWeekArray: Array<String> = []
+
     
     
     //DAYS OF THE WEEK BUTTONS
@@ -225,13 +225,17 @@ class ChallengeController: UIViewController, CNContactPickerDelegate {
                 // set deselected
                 sundayPressed.isSelected = false
                 
-                //Remove from array in model
+                //Remove the day from our array
+                daysOfTheWeekArray = daysOfTheWeekArray.filter({$0 != "sunday"})
+                print(daysOfTheWeekArray)
                 
             } else {
                 // set selected
                 sundayPressed.isSelected = true
                 
-                //Add to array in model
+                //Add selected day
+                daysOfTheWeekArray.append("sunday")
+                print(daysOfTheWeekArray)
             }
         }
     }
@@ -248,15 +252,16 @@ class ChallengeController: UIViewController, CNContactPickerDelegate {
                 mondayPressed.isSelected = false
                 
                 //Remove the day from our array
+                daysOfTheWeekArray = daysOfTheWeekArray.filter({$0 != "monday"})
+                print(daysOfTheWeekArray)
                 
-//                 let filteredDayOfTheWeekArray = daysOfTheWeekArray.filter {$0 != "monday"}
-//                print(filteredDayOfTheWeekArray)
             } else {
                 //set as selected
                 mondayPressed.isSelected = true
                 
-//                daysOfTheWeekArray.append("monday")
-//                print(daysOfTheWeekArray)
+                //Add selected day
+                daysOfTheWeekArray.append("monday")
+                print(daysOfTheWeekArray)
             }
         }
     }
@@ -271,10 +276,17 @@ class ChallengeController: UIViewController, CNContactPickerDelegate {
                 // set deselected
                 tuesdayPressed.isSelected = false
                 
+                //Remove the day from our array
+                daysOfTheWeekArray = daysOfTheWeekArray.filter({$0 != "tuesday"})
+                print(daysOfTheWeekArray)
                 
             } else {
                 // set selected
                 tuesdayPressed.isSelected = true
+                
+                //Add selected day
+                daysOfTheWeekArray.append("tuesday")
+                print(daysOfTheWeekArray)
                 
                 
             }
@@ -292,9 +304,19 @@ class ChallengeController: UIViewController, CNContactPickerDelegate {
             if wednesdayPressed.isSelected {
                 // set deselected
                 wednesdayPressed.isSelected = false
+                
+                //Remove the day from our array
+                daysOfTheWeekArray = daysOfTheWeekArray.filter({$0 != "wednesday"})
+                print(daysOfTheWeekArray)
+                
             } else {
                 // set selected
                 wednesdayPressed.isSelected = true
+                
+                //Add selected day
+                daysOfTheWeekArray.append("wednesday")
+                print(daysOfTheWeekArray)
+                
             }
         }
         
@@ -309,9 +331,19 @@ class ChallengeController: UIViewController, CNContactPickerDelegate {
             if thursdayPressed.isSelected {
                 // set deselected
                 thursdayPressed.isSelected = false
+                
+                //Remove the day from our array
+                daysOfTheWeekArray = daysOfTheWeekArray.filter({$0 != "thursday"})
+                print(daysOfTheWeekArray)
+                
             } else {
                 // set selected
                 thursdayPressed.isSelected = true
+                
+                //Add selected day
+                daysOfTheWeekArray.append("thursday")
+                print(daysOfTheWeekArray)
+                
             }
         }
 
@@ -327,9 +359,19 @@ class ChallengeController: UIViewController, CNContactPickerDelegate {
             if fridayPressed.isSelected {
                 // set deselected
                 fridayPressed.isSelected = false
+                
+                //Remove the day from our array
+                daysOfTheWeekArray = daysOfTheWeekArray.filter({$0 != "friday"})
+                print(daysOfTheWeekArray)
+                
             } else {
                 // set selected
                 fridayPressed.isSelected = true
+                
+                //Add selected day
+                daysOfTheWeekArray.append("friday")
+                print(daysOfTheWeekArray)
+                
             }
         }
 
@@ -345,9 +387,19 @@ class ChallengeController: UIViewController, CNContactPickerDelegate {
             if saturdayPressed.isSelected {
                 // set deselected
                 saturdayPressed.isSelected = false
+                
+                //Remove the day from our array
+                daysOfTheWeekArray = daysOfTheWeekArray.filter({$0 != "saturday"})
+                print(daysOfTheWeekArray)
+                
             } else {
                 // set selected
                 saturdayPressed.isSelected = true
+                
+                //Add selected day
+                daysOfTheWeekArray.append("saturday")
+                print(daysOfTheWeekArray)
+                
             }
         }
 
@@ -403,7 +455,7 @@ class ChallengeController: UIViewController, CNContactPickerDelegate {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy-MM-dd"
         
-        //Convert today's date to comply with Firebase
+        //Convert today's date to string to comply with Firebase
         let dateString = formatter.string(from: today as Date)
         
         
