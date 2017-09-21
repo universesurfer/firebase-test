@@ -23,6 +23,7 @@ struct Challenge {
     
     var daysOfWeek: Array<String>
     let dateStarted: String
+    let dateEnding: String
     let totalDaysDuration: String   //may need to become integers
     let makeItInteresting: Bool
     let wagerAmount: String         //may need to become integers
@@ -38,13 +39,14 @@ struct Challenge {
     let challengeCancelled: Bool
     
     
-    init(challengerOne: String, challengerTwo: String, challengeName: String, daysOfWeek: Array<String>, dateStarted: String, totalDaysDuration: String, makeItInteresting: Bool, wagerAmount: String, wagerIsStrict: Bool, challengeId: String, challengePending: Bool, challengeAccepted: Bool, challengeCancelled: Bool ){
+    init(challengerOne: String, challengerTwo: String, challengeName: String, daysOfWeek: Array<String>, dateStarted: String, dateEnding: String, totalDaysDuration: String, makeItInteresting: Bool, wagerAmount: String, wagerIsStrict: Bool, challengeId: String, challengePending: Bool, challengeAccepted: Bool, challengeCancelled: Bool ){
         
         self.challengerOne = challengerOne
         self.challengerTwo = challengerTwo
         self.challengeName = challengeName
         self.daysOfWeek = daysOfWeek
         self.dateStarted = dateStarted
+        self.dateEnding = dateEnding
         self.totalDaysDuration = totalDaysDuration
         self.makeItInteresting = makeItInteresting
         self.wagerAmount = wagerAmount

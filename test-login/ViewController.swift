@@ -57,7 +57,7 @@ class ViewController: UIViewController {
                 let userID = user!.uid
                 
                 //Instantiate our User model - set key values equal to optionals above from sign up form
-                let userAccount = User(userId: userID, firstName: firstName, lastName: lastName)
+                let userAccount = User(userId: userID, firstName: firstName, lastName: lastName, email: email)
                 
                 //Initialize an empty dictionary to hold the keys and values to upload to Firebase
                 var userAccountDict = [String:AnyObject]()
@@ -66,6 +66,7 @@ class ViewController: UIViewController {
                 userAccountDict.updateValue(userAccount.userId as AnyObject, forKey: "userId")
                 userAccountDict.updateValue(userAccount.firstName as AnyObject, forKey: "firstName")
                 userAccountDict.updateValue(userAccount.lastName as AnyObject, forKey: "lastName")
+                userAccountDict.updateValue(userAccount.email as AnyObject, forKey: "email")
                 
                 
                 //Upload dictionary with the keys and values set above. The database will hold these key/value pairs under the "users" node.

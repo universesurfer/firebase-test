@@ -47,7 +47,10 @@ class ProfileController: UIViewController {
                 
                 if let currentUser = snapshot.value as? [String: AnyObject] {
                     self.currentUserLabel.text = currentUser["firstName"] as? String
+                    
+                    print(currentUser)
                 }
+                
                 
                 print(snapshot)
             }, withCancel: nil)

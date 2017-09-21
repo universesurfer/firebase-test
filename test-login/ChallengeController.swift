@@ -44,6 +44,8 @@ class ChallengeController: UIViewController, CNContactPickerDelegate {
         
         ref = Database.database().reference()
         
+        
+        
     }
 
     
@@ -448,6 +450,63 @@ class ChallengeController: UIViewController, CNContactPickerDelegate {
     }
     
     
+    
+    
+//EMAIL USER SEARCH
+    
+    @IBOutlet weak var searchUserInputer: UITextField!
+    
+    @IBOutlet weak var retrievedUserLabel: UILabel!
+   
+    
+    @IBAction func searchUserButton(_ sender: Any) {
+        
+        if let user = searchUserInputer.text {
+            searchUser(user: user)
+        }
+    }
+    
+    //Searches a user entered email from Firebase and returns data if it matches
+    func searchUser(user: String) {
+        
+        let userRef = Database.database().reference().child("users")
+        let userQuery = userRef.queryOrdered(byChild: "email").queryEqual(toValue: user)
+        
+        
+        userQuery.observe(.value, with: { (snapshot) in
+            
+            for child in snapshot.children.allObjects {
+                
+                let childSnapshot = snapshot.childSnapshot(forPath: (child as AnyObject).key)
+                
+                if let snapshotValue = childSnapshot.value as? NSDictionary {
+                    
+                    if let firstName = snapshotValue["firstName"] as? String,
+                        let lastName = snapshotValue["lastName"] as? String,
+                        let userId = snapshotValue["userId"] as? String,
+                        let email = snapshotValue["email"] as? String {
+                        
+                        let retrievedUser = User(userId: userId, firstName: firstName, lastName: lastName, email: email)
+                        
+                        self.retrievedUserLabel.text = firstName
+                        self.showContactLabel.text = firstName
+                        
+                        print(firstName)
+                        print(retrievedUser)
+                    }
+                } else {
+                    print("Error: not retrieving user data")
+                }
+                
+            }
+            
+        })
+    }
+    
+    
+//SUBMIT THE CHALLENGE-------------------------------------
+    
+    
     @IBAction func submitChallengePressed(_ sender: Any) {
 
 //        let currentUser = Auth.auth().currentUser?.uid
@@ -458,6 +517,12 @@ class ChallengeController: UIViewController, CNContactPickerDelegate {
         //Convert today's date to string to comply with Firebase
         let dateString = formatter.string(from: today as Date)
         
+       
+        
+//        let tomorrow = Calendar.current.date(byAdding:
+//            .day, // updated this params to add hours
+//            value: 1,
+//            to: now)
         
     
         let makeItInteresting = switchStatus
@@ -473,12 +538,16 @@ class ChallengeController: UIViewController, CNContactPickerDelegate {
         
         
         
-        if let challengerOne = Auth.auth().currentUser?.uid, let challengerTwo = showContactLabel.text, let challengeName = challengeNameInput.text, let wagerAmount = wagerInputTextField.text, let challengeDuration = daysEnteredInput.text {
+        if let challengerOne = Auth.auth().currentUser?.uid, let challengerTwo = showContactLabel.text, let challengeName = challengeNameInput.text, let wagerAmount = wagerInputTextField.text, let challengeDuration = daysEnteredInput.text, let userSelectedDuration = Int(challengeDuration) {
     
+         
+            
+         let dateEnding = String(describing: Calendar.current.date(byAdding: .day, value: userSelectedDuration, to: today as Date))
             
         //Instantiate our Challenge model - set key values equal to optionals above from sign up form
             
-            let newChallenge = Challenge(challengerOne: challengerOne, challengerTwo: challengerTwo, challengeName: challengeName, daysOfWeek: daysOfTheWeekArray, dateStarted: dateString, totalDaysDuration: challengeDuration, makeItInteresting: makeItInteresting, wagerAmount: wagerAmount, wagerIsStrict: wagerIsStrict, challengeId: thisChallengeId, challengePending: challengePending, challengeAccepted: challengeAccepted, challengeCancelled: challengeCancelled)
+            let newChallenge = Challenge(challengerOne: challengerOne, challengerTwo: challengerTwo, challengeName: challengeName, daysOfWeek: daysOfTheWeekArray, dateStarted: dateString, dateEnding: dateEnding, totalDaysDuration: challengeDuration, makeItInteresting: makeItInteresting, wagerAmount: wagerAmount, wagerIsStrict: wagerIsStrict, challengeId: thisChallengeId, challengePending: challengePending, challengeAccepted: challengeAccepted, challengeCancelled: challengeCancelled)
+            
             
             //Initialize an empty dictionary to hold the keys and values to upload to Firebase
             var challengeDictionary = [String:AnyObject]()
@@ -490,6 +559,7 @@ class ChallengeController: UIViewController, CNContactPickerDelegate {
             challengeDictionary.updateValue(newChallenge.challengeName as AnyObject, forKey: "challengeName")
             challengeDictionary.updateValue(newChallenge.daysOfWeek as AnyObject, forKey: "daysOfWeek")
             challengeDictionary.updateValue(newChallenge.dateStarted as AnyObject, forKey: "dateStarted")
+            challengeDictionary.updateValue(newChallenge.dateEnding as AnyObject, forKey: "dateEnding")
             challengeDictionary.updateValue(newChallenge.totalDaysDuration as AnyObject, forKey: "totalDaysDuration")
             challengeDictionary.updateValue(newChallenge.makeItInteresting as AnyObject, forKey: "makeItInteresting")
             challengeDictionary.updateValue(newChallenge.wagerAmount as AnyObject, forKey: "wagerAmount")
