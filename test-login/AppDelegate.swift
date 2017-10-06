@@ -6,7 +6,6 @@
 //  Copyright © 2017 Nick. All rights reserved.
 //
 
-import Stripe
 import UIKit
 import Firebase
 
@@ -25,7 +24,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         //------ Configure Stripe ------
-        STPPaymentConfiguration.shared().publishableKey = "pk_test_QbAtfrImSVvy7WM42aewfLVd"
+//        STPPaymentConfiguration.shared().publishableKey = "pk_test_QbAtfrImSVvy7WM42aewfLVd"
         
         FirebaseApp.configure()
         return true

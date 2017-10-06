@@ -489,7 +489,7 @@ class ChallengeController: UIViewController, CNContactPickerDelegate {
                         let retrievedUser = User(userId: userId, firstName: firstName, lastName: lastName, email: email)
                         
                         self.retrievedUserLabel.text = firstName
-                        self.showContactLabel.text = firstName
+//                        self.showContactLabel.text = firstName
                         
                         print(firstName)
                         print(retrievedUser)
@@ -516,13 +516,6 @@ class ChallengeController: UIViewController, CNContactPickerDelegate {
         
         //Convert today's date to string to comply with Firebase
         let dateString = formatter.string(from: today as Date)
-        
-       
-        
-//        let tomorrow = Calendar.current.date(byAdding:
-//            .day, // updated this params to add hours
-//            value: 1,
-//            to: now)
         
     
         let makeItInteresting = switchStatus

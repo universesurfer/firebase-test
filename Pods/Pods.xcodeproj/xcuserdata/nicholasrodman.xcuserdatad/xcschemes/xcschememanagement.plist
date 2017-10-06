@@ -4,11 +4,6 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Alamofire.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>GTMSessionFetcher.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -24,12 +19,7 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Stripe-Stripe.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Stripe.xcscheme</key>
+		<key>PureLayout.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,6 +37,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>0E26474A49884F0DA8FD29620EB40445</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
 		<dict>
 			<key>primary</key>
@@ -57,22 +52,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>510B7F963FC8B6B5CCA8320E5244249D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>59D6036C25C578DC0EA5EDB93071DE7D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7F363F980C9CBBF13A362A57B56F2EE6</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<key>74F6E9769B865E780AC687A19F87FC2B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
