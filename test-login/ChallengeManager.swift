@@ -176,6 +176,7 @@ class ChallengeManager: UICollectionViewController, UITextFieldDelegate {
     
 //--------------CHALLENGE FILTER CONTROL-------------------
     
+    //Data filter represents the 'Current, Pending, and Completed' segment selected by user
     var dataFilter = 0
     
     @IBOutlet weak var challengeFilterSegment: UISegmentedControl!
@@ -289,12 +290,68 @@ class ChallengeManager: UICollectionViewController, UITextFieldDelegate {
         
         
         }
-//        let challenge = pendingFilterChallenges[indexPath.row]
-        
-//        cell.challengeNameLabel.text = challenge.challengeName
     
+    
+    
+    //--------MAKE THE CELLS CLICKABLE------
+    
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
+        print("cells are clickable")
+
+        let selectedPendingChallenge = pendingFilterChallenges[indexPath.row]
+        
+        let destinationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "challengeDetails") as! ChallengeDetails
+        
+        
+        switch dataFilter {
+            
+        case 0:
+            //We need array for Current Challenges
+            print("inside clicked challenge cell")
+        case 1:
+            destinationController.selectedChallenge = selectedPendingChallenge
+            print("inside pending challenge cell  \(selectedPendingChallenge)")
+        case 2:
+            //We need array for Completed Challenges.
+            print("inside completed challenge cell")
+        default:
+            print("inside default")
+            
+        }
+        
+      
+//        destinationController.selectedChallenge = clickedChallenge
+        
+        navigationController?.pushViewController(destinationController, animated: true)
+
     }
+    
+    
+    
+    
+    
+    
+    
+//    let clickedUser = retrievedUserArray[indexPath.row]
+//    
+//    let destinationController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "challengeMaker") as! ChallengeController
+//    
+//    destinationController.selectedUser = clickedUser
+//    
+//    navigationController?.pushViewController(destinationController, animated: true)
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    }
+
 
     // MARK: UICollectionViewDelegate
 

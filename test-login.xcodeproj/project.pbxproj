@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		2132872A1F69A7A70040D34A /* PaymentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 213287291F69A7A60040D34A /* PaymentController.swift */; };
+		213992401F8840800094B737 /* ChallengeDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2139923F1F8840800094B737 /* ChallengeDetails.swift */; };
 		21422A471F478FD800E980AD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21422A461F478FD800E980AD /* AppDelegate.swift */; };
 		21422A491F478FD800E980AD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21422A481F478FD800E980AD /* ViewController.swift */; };
 		21422A4E1F478FD800E980AD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 21422A4D1F478FD800E980AD /* Assets.xcassets */; };
@@ -21,11 +21,6 @@
 		2159F6B61F840AA700C1567C /* ChallengeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2159F6B51F840AA700C1567C /* ChallengeManager.swift */; };
 		215B86211F50BF9100D885D6 /* ChallengeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 215B86201F50BF9100D885D6 /* ChallengeController.swift */; };
 		217403DA1F7198C0003E24E0 /* TimeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 217403D91F7198C0003E24E0 /* TimeController.swift */; };
-		21E3037D1F6C7B8E007B9907 /* BrowseProductsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E303771F6C7B8E007B9907 /* BrowseProductsViewController.swift */; };
-		21E3037E1F6C7B8E007B9907 /* Buttons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E303781F6C7B8E007B9907 /* Buttons.swift */; };
-		21E3037F1F6C7B8E007B9907 /* CheckoutRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E303791F6C7B8E007B9907 /* CheckoutRowView.swift */; };
-		21E303811F6C7B8E007B9907 /* MyAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E3037B1F6C7B8E007B9907 /* MyAPIClient.swift */; };
-		21E303821F6C7B8E007B9907 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E3037C1F6C7B8E007B9907 /* SettingsViewController.swift */; };
 		21E65B3B1F61C94C00F23402 /* ChallengeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 21E65B3A1F61C94C00F23402 /* ChallengeModel.swift */; };
 		21EB25B81F5495BA004DB3CF /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21EB25B71F5495BA004DB3CF /* Contacts.framework */; };
 		21EB25BA1F5495BF004DB3CF /* ContactsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 21EB25B91F5495BF004DB3CF /* ContactsUI.framework */; };
@@ -35,7 +30,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		213287291F69A7A60040D34A /* PaymentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentController.swift; sourceTree = "<group>"; };
+		2139923F1F8840800094B737 /* ChallengeDetails.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeDetails.swift; sourceTree = "<group>"; };
 		21422A431F478FD800E980AD /* test-login.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "test-login.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		21422A461F478FD800E980AD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		21422A481F478FD800E980AD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -50,11 +45,6 @@
 		2159F6B51F840AA700C1567C /* ChallengeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeManager.swift; sourceTree = "<group>"; };
 		215B86201F50BF9100D885D6 /* ChallengeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeController.swift; sourceTree = "<group>"; };
 		217403D91F7198C0003E24E0 /* TimeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeController.swift; sourceTree = "<group>"; };
-		21E303771F6C7B8E007B9907 /* BrowseProductsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrowseProductsViewController.swift; sourceTree = "<group>"; };
-		21E303781F6C7B8E007B9907 /* Buttons.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Buttons.swift; sourceTree = "<group>"; };
-		21E303791F6C7B8E007B9907 /* CheckoutRowView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutRowView.swift; sourceTree = "<group>"; };
-		21E3037B1F6C7B8E007B9907 /* MyAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAPIClient.swift; sourceTree = "<group>"; };
-		21E3037C1F6C7B8E007B9907 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		21E65B3A1F61C94C00F23402 /* ChallengeModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChallengeModel.swift; sourceTree = "<group>"; };
 		21EB25B71F5495BA004DB3CF /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		21EB25B91F5495BF004DB3CF /* ContactsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ContactsUI.framework; path = System/Library/Frameworks/ContactsUI.framework; sourceTree = SDKROOT; };
@@ -102,7 +92,6 @@
 		21422A451F478FD800E980AD /* test-login */ = {
 			isa = PBXGroup;
 			children = (
-				21E303761F6C7B7C007B9907 /* Stripe */,
 				21488AD51F5A397E0021CCAD /* Assets */,
 				21467C161F4CCB48006B3B51 /* Controllers */,
 				2145A9A81F4B8968002DFFBA /* Services */,
@@ -142,6 +131,7 @@
 				215B86201F50BF9100D885D6 /* ChallengeController.swift */,
 				217403D91F7198C0003E24E0 /* TimeController.swift */,
 				2159F6B51F840AA700C1567C /* ChallengeManager.swift */,
+				2139923F1F8840800094B737 /* ChallengeDetails.swift */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -151,19 +141,6 @@
 			children = (
 			);
 			name = Assets;
-			sourceTree = "<group>";
-		};
-		21E303761F6C7B7C007B9907 /* Stripe */ = {
-			isa = PBXGroup;
-			children = (
-				21E303771F6C7B8E007B9907 /* BrowseProductsViewController.swift */,
-				21E303781F6C7B8E007B9907 /* Buttons.swift */,
-				21E303791F6C7B8E007B9907 /* CheckoutRowView.swift */,
-				213287291F69A7A60040D34A /* PaymentController.swift */,
-				21E3037B1F6C7B8E007B9907 /* MyAPIClient.swift */,
-				21E3037C1F6C7B8E007B9907 /* SettingsViewController.swift */,
-			);
-			name = Stripe;
 			sourceTree = "<group>";
 		};
 		76B480B83AB9D1867471D3E8 /* Pods */ = {
@@ -328,17 +305,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2159F6B61F840AA700C1567C /* ChallengeManager.swift in Sources */,
-				21E3037F1F6C7B8E007B9907 /* CheckoutRowView.swift in Sources */,
-				21E303811F6C7B8E007B9907 /* MyAPIClient.swift in Sources */,
 				217403DA1F7198C0003E24E0 /* TimeController.swift in Sources */,
-				21E3037D1F6C7B8E007B9907 /* BrowseProductsViewController.swift in Sources */,
 				21467C181F4CCB66006B3B51 /* ProfileController.swift in Sources */,
 				21E65B3B1F61C94C00F23402 /* ChallengeModel.swift in Sources */,
 				215B86211F50BF9100D885D6 /* ChallengeController.swift in Sources */,
 				21422A491F478FD800E980AD /* ViewController.swift in Sources */,
-				21E3037E1F6C7B8E007B9907 /* Buttons.swift in Sources */,
-				21E303821F6C7B8E007B9907 /* SettingsViewController.swift in Sources */,
-				2132872A1F69A7A70040D34A /* PaymentController.swift in Sources */,
+				213992401F8840800094B737 /* ChallengeDetails.swift in Sources */,
 				2145A9A71F4B888C002DFFBA /* UserModel.swift in Sources */,
 				2145A9AA1F4B8975002DFFBA /* DatabaseService.swift in Sources */,
 				21422A471F478FD800E980AD /* AppDelegate.swift in Sources */,
